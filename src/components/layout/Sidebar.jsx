@@ -5,9 +5,8 @@ import { FaHome, FaClipboardList, FaBriefcase, FaBars, FaTimes } from 'react-ico
 import CetiJobLogo from '../../assets/images/CertiJob.png';
 import boxRocket from '../../assets/images/boxRocket.png';
 
-const Sidebar = () => {
+const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const navigate = useNavigate();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const handleLogoClick = () => {
     navigate('/'); // Navigate to homepage/dashboard
@@ -24,11 +23,12 @@ const Sidebar = () => {
   
   return (
     <>
-      {/* Mobile Hamburger/Close Menu Button - Only visible on mobile */}
-      <div className="md:hidden fixed top-4 left-4 z-50">
+      {/* Mobile and Tablet Hamburger/Close Menu Button - Only visible on smaller screens */}
+      <div className="lg:hidden fixed top-4 left-4 z-50">
         <button
           onClick={toggleMobileMenu}
           className="bg-sidebar text-white p-3 rounded-lg shadow-lg"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMobileMenuOpen ? (
             <FaTimes className="text-xl" />
@@ -38,10 +38,10 @@ const Sidebar = () => {
         </button>
       </div>
 
-      {/* Mobile Overlay - Only visible on mobile when menu is open */}
+      {/* Mobile and Tablet Overlay - Only visible when menu is open on smaller screens */}
       {isMobileMenuOpen && (
         <div 
-          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
           onClick={closeMobileMenu}
         ></div>
       )}
@@ -50,16 +50,16 @@ const Sidebar = () => {
       <div className={`
         h-screen w-64 bg-sidebar text-white flex flex-col z-40
         
-        /* Desktop and Tablet - Always visible and fixed */
-        md:fixed md:left-0 md:top-0
+        /* Desktop - Always visible and fixed */
+        lg:fixed lg:left-0 lg:top-0
         
-        /* Mobile - Sliding sidebar */
-        fixed top-0 transition-transform duration-300 ease-in-out
+        /* Mobile and Tablet - Sliding sidebar */
+        fixed top-0 transition-all duration-300 ease-in-out
         ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
-        md:translate-x-0
+        lg:translate-x-0
       `}>
         
-        <div className="px-6 py-4 flex items-center border-b border-gray-700 mt-12 md:mt-0">
+        <div className="px-6 py-4 flex items-center border-b border-gray-700 mt-12 lg:mt-0">
           <img 
             src={CetiJobLogo} 
             alt="CetiJob Logo" 
@@ -71,9 +71,17 @@ const Sidebar = () => {
         
         <div className="mt-8 flex-1">
           <div className="px-4">
-            <div className="flex items-center px-4 py-3 rounded text-white mb-2">
+            <div className="flex items-center px-4 py-3 rounded text-white mb-2 hover:bg-[#002b5b] cursor-pointer">
               <FaBriefcase className="mr-3" />
               <span className="sf-ui-text">My Recruitment</span>
+            </div>
+            <div className="flex items-center px-4 py-3 rounded text-white mb-2 hover:bg-[#002b5b] cursor-pointer">
+              <FaHome className="mr-3" />
+              <span className="sf-ui-text">Dashboard</span>
+            </div>
+            <div className="flex items-center px-4 py-3 rounded text-white mb-2 hover:bg-[#002b5b] cursor-pointer">
+              <FaClipboardList className="mr-3" />
+              <span className="sf-ui-text">Reports</span>
             </div>
           </div>
         </div>

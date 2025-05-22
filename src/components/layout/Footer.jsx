@@ -9,9 +9,9 @@ const Footer = () => {
       <footer className="p-6 pb-0">
         {/* Social media icons */}
         <div className="footer-wrapper">
-          <div className="bg-[#F4F8FB] -ml-8">
+          <div className="bg-[#F4F8FB]">
             {/* Social media icons */}
-            <div className="flex justify-end space-x-4 p-6 pb-0 px-9">
+            <div className="flex justify-end space-x-4 p-6 pb-0 px-8">
               <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm">
                 <FaTwitter className="text-[#06BF97]" />
               </a>
@@ -54,11 +54,11 @@ const Footer = () => {
                 <h3 className="font-medium mb-3 text-[#827F7F] rubik-font text-sm lg:text-base">
                   Subscribe to our Newsletter for Fitness Sector Updates
                 </h3>
-                <div className="flex mt-4 lg:w-[120%]">
+                <div className="flex mt-4 w-full">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="border rounded-l-md px-3 py-2 text-sm w-full sf-ui-text min-w-0"
+                    className="border rounded-l-md px-3 py-2 text-sm  lg:w-[20rem] sf-ui-text min-w-0"
                   />
                   <button className="bg-white px-3 py-2 rounded-r-md border border-l-0 flex-shrink-0">
                     <FaPaperPlane className="text-[#06BF97]" />

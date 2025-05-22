@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
+import { FaBars } from 'react-icons/fa';
 import RectangleImg from '../../assets/images/RectangleImg.png';
-const RecruitmentForm = () => {
+const RecruitmentForm = ({ toggleMobileMenu }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { isEdit = false, recruitmentData = null } = location.state || {};
@@ -30,13 +31,31 @@ const RecruitmentForm = () => {
   };
 
   return (
-    <div className="p-6 bg-background min-h-screen w-full">
+    <div className="flex flex-col min-h-screen p-4 md:p-6 bg-background">
+      {/* Mobile menu toggle button */}
+      <div className="lg:hidden fixed top-4 left-4 z-10">
+        <button
+          onClick={toggleMobileMenu}
+          className="bg-sidebar text-white p-3 rounded-lg shadow-lg"
+          aria-label="Open menu"
+        >
+          <FaBars className="text-xl" />
+        </button>
+      </div>
       <Header title="Create New Recruitment" />
 
-      <div className="flex h-[8rem] justify-between z-10 items-center" style={{ backgroundImage: `url(${RectangleImg})`, backgroundPosition: 'center', backgroundSize: 'cover' , backgroundRepeat: 'no-repeat' }}>
+      <div className="flex h-[8rem] justify-between z-10 items-center w-full hidden sm:flex" style={{ 
+        backgroundImage: `url(${RectangleImg})`, 
+        backgroundPosition: 'center', 
+        backgroundSize: 'cover', 
+        backgroundRepeat: 'no-repeat' 
+      }}>
       </div>
-      <div className="flex bg-white mt-[-2rem] opacity-40 h-[2rem] justify-end  border border-blue-200 border-b-0"></div>
-      <div className="bg-white max-w-[67rem] h-[53rem]  p-6 border border-gray-200">
+      <div className="flex h-[8rem] justify-between z-10 items-center w-full sm:hidden">
+        {/* Empty container for mobile */}
+      </div>
+      <div className="flex bg-white mt-[-2rem] opacity-40 h-[2rem] justify-end border border-blue-200 border-b-0 w-full"></div>
+      <div className="bg-white w-full max-w-full md:max-w-[67rem] p-4 md:p-6 border border-gray-200 overflow-x-auto">
         <form onSubmit={handleSubmit}>
           <div className="mt-7">
             <input 
@@ -50,7 +69,7 @@ const RecruitmentForm = () => {
             />
           </div>
           
-          <div className="grid grid-cols-2 gap-4 mt-7">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-7">
             <div className="relative">
               <select 
                 name="jobRole"
@@ -105,27 +124,27 @@ const RecruitmentForm = () => {
             </div>
           )}
           
-          <div className="mt-24">
+          <div className="mt-16 md:mt-24">
             <textarea 
               name="description"
               placeholder="Write description here" 
-              className="w-full border border-gray-200 rounded-md px-4 py-3 h-48 focus:outline-none focus:border-[#06BF97] resize-none text-gray-700 roboto-font"
+              className="w-full border border-gray-200 rounded-md px-4 py-3 h-36 md:h-48 focus:outline-none focus:border-[#06BF97] resize-none text-gray-700 roboto-font"
               value={formData.description}
               onChange={handleChange}
             ></textarea>
           </div>
           
-          <div className="flex justify-end space-x-3 mt-7">
+          <div className="flex flex-col md:flex-row md:justify-end space-y-3 md:space-y-0 md:space-x-3 mt-7">
             <button 
               type="button" 
-              className="px-6 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-50 focus:outline-none sf-ui-text"
+              className="w-full md:w-auto px-6 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-50 focus:outline-none sf-ui-text"
               onClick={() => navigate('/')}
             >
               Cancel
             </button>
             <button 
               type="submit" 
-              className="px-6 py-2 bg-[#06BF97] text-white rounded-md hover:bg-[#06BF97]/90 focus:outline-none sf-ui-text"
+              className="w-full md:w-auto px-6 py-2 bg-[#06BF97] text-white rounded-md hover:bg-[#06BF97]/90 focus:outline-none sf-ui-text"
             >
               {isEdit ? 'Save Changes' : 'Save & Continue'}
             </button>
