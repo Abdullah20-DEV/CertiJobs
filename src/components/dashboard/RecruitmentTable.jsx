@@ -37,9 +37,9 @@ const RecruitmentTable = () => {
 
   return (
     <div className="w-full overflow-x-auto">
-      <table className="min-w-full bg-white rounded-lg">
+      <table className="min-w-full rounded-lg">
         <thead>
-          <tr className="text-left text-[#36404A] border-b roboto-font">
+          <tr className="text-left bg-white text-[#36404A] border-b roboto-font">
             <th className="py-3 px-4 font-medium">ID</th>
             <th className="py-3 px-4 font-medium">Recruitment Name</th>
             <th className="py-3 px-4 font-medium">Candidates</th>
@@ -50,7 +50,12 @@ const RecruitmentTable = () => {
         </thead>
         <tbody>
           {recruitmentData.map((item, index) => (
-            <tr key={index} className={`border-b hover:bg-gray-50 text-[#36404A] roboto-font ${index % 2 === 1 ? 'bg-[#F4F8FB]' : 'bg-white'}`}>
+            <tr
+              key={index}
+              className={`border-b hover:bg-gray-50 text-[#36404A] roboto-font ${
+                index % 2 === 0 ? 'bg-[#F4F8FB]' : 'bg-white'
+              }`}
+            >
               <td className="py-3 px-4">{item.id}</td>
               <td className="py-3 px-4">{item.name}</td>
               <td className="py-3 px-4">{item.candidates}</td>
@@ -67,7 +72,7 @@ const RecruitmentTable = () => {
                 <button className="text-blue-500 hover:text-blue-700">
                   <FaEye size={16} />
                 </button>
-                <button 
+                <button
                   className="text-green-500 hover:text-green-700"
                   onClick={() => handleEdit(item)}
                 >
@@ -86,7 +91,7 @@ const RecruitmentTable = () => {
       </table>
       <div className="flex justify-end mt-4 px-4">
         <div className="flex space-x-1 items-center text-[#36404A]">
-          <button className="px-3 py-1  rounded hover:bg-gray-100 flex items-center justify-center">
+          <button className="px-3 py-1 rounded hover:bg-gray-100 flex items-center justify-center">
             <img src={leftArrow} alt="Previous Page" className="w-4 h-4" />
           </button>
           <button className="px-3 border rounded bg-white text-[#5FBEAA] roboto-font">1</button>
