@@ -24,7 +24,7 @@ const Dashboard = () => {
       <Header title="My Recruitments" />
 
       <div className="bg-white rounded-lg shadow-sm p-4" style={{ backgroundImage: `url(${HeaderBg})`, backgroundPosition: 'center', backgroundSize: 'contain' , backgroundRepeat: 'space' }} >
-      <div className="flex justify-between items-center" >
+        <div className="flex justify-between items-center" >
           <div className="flex space-x-10 border-b">
             <button
               className={`pb-2 px-1 roboto-font ${activeTab === 'active' ? 'border-b-2 border-[#142D52] font-medium' : 'text-[#142D52]'}`}
@@ -56,9 +56,6 @@ const Dashboard = () => {
       <div className="bg-white rounded-lg shadow-sm p-6 mb-8" >
         <RecruitmentTable />
       </div>
-      
-      {/* Horizontal divider */}
-     
       
       {/* Help Center button outside of table */}
       <div className="flex justify-end px-4 mt-8">

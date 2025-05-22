@@ -4,6 +4,7 @@ import { FaHome, FaClipboardList, FaBriefcase } from 'react-icons/fa';
 // Import the logo directly
 import CetiJobLogo from '../../assets/images/CertiJob.png';
 import boxRocket from '../../assets/images/boxRocket.png';
+
 const Sidebar = () => {
   const navigate = useNavigate();
   
@@ -25,7 +26,7 @@ const Sidebar = () => {
       
       <div className="mt-8 flex-1">
         <div className="px-4">
-          <div className="flex items-center px-4 py-3 rounded  text-white mb-2">
+          <div className="flex items-center px-4 py-3 rounded text-white mb-2">
             <FaBriefcase className="mr-3" />
             <span className="sf-ui-text">My Recruitment</span>
           </div>
@@ -34,18 +35,16 @@ const Sidebar = () => {
       </div>
       
       <div className="px-4 py-6 border-t border-gray-700">
-  <div className="text-center">
-    <div className="flex flex-col items-center mb-2">
-      <img src={boxRocket} alt="John Doe" className="h-24 w-24 mb-2" />
-      <p className="text-center text-[#9A9A9A] text-[0.75rem] max-w-xs leading-snug rubik-font">
-        Lorem ipsum dolor sit amet, consec<br />
-        <span className="block text-center">tetur adipiscing elit.</span>
-      </p>
-    </div>
-  </div>
-</div>
-
-
+        <div className="text-center">
+          <div className="flex flex-col items-center mb-2">
+            <img src={boxRocket} alt="John Doe" className="h-24 w-24 mb-2" />
+            <p className="text-center text-[#9A9A9A] text-[0.75rem] max-w-xs leading-snug rubik-font">
+              Lorem ipsum dolor sit amet, consec<br />
+              <span className="block text-center">tetur adipiscing elit.</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
