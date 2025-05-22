@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <hr className="border-gray-200 mt-7" />
 
-      <footer className="p-6">
+      <footer className="p-6 pb-0">
         {/* Social media icons */}
         <div className="footer-wrapper"> 
   <div className="bg-[#F4F8FB] -ml-8">
@@ -27,7 +27,7 @@ const Footer = () => {
     </div>
 
     {/* Footer content */}
-    <div className="grid grid-cols-4 gap-6 p-6 pt-4 h-[14rem]">
+    <div className="grid grid-cols-4 gap-6 p-6 pb-0 pt-4 h-[14rem]">
       <div>
         <h3 className="font-medium mb-3 text-[#827F7F] sf-ui-text">Services</h3>
         <ul className="text-sm text-[#827F7F] space-y-2 sf-ui-text">
