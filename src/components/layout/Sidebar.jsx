@@ -25,7 +25,7 @@ const Sidebar = () => {
       
       <div className="mt-8 flex-1">
         <div className="px-4">
-          <div className="flex items-center px-4 py-3 rounded bg-primary text-white mb-2">
+          <div className="flex items-center px-4 py-3 rounded  text-white mb-2">
             <FaBriefcase className="mr-3" />
             <span className="sf-ui-text">My Recruitment</span>
           </div>
