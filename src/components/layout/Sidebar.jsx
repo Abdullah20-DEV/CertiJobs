@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaHome, FaClipboardList, FaBriefcase, FaBars, FaTimes } from 'react-icons/fa';
-// Import the logo directly
+
 import CetiJobLogo from '../../assets/images/CertiJob.png';
 import boxRocket from '../../assets/images/boxRocket.png';
 
@@ -9,8 +9,8 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const navigate = useNavigate();
   
   const handleLogoClick = () => {
-    navigate('/'); // Navigate to homepage/dashboard
-    setIsMobileMenuOpen(false); // Close mobile menu when logo is clicked
+    navigate('/'); 
+    setIsMobileMenuOpen(false); 
   };
 
   const toggleMobileMenu = () => {
@@ -23,7 +23,7 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   
   return (
     <>
-      {/* Mobile and Tablet Hamburger/Close Menu Button - Only visible on smaller screens */}
+      
       <div className="lg:hidden fixed top-4 left-4 z-50">
         <button
           onClick={toggleMobileMenu}
@@ -38,7 +38,7 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
         </button>
       </div>
 
-      {/* Mobile and Tablet Overlay - Only visible when menu is open on smaller screens */}
+   
       {isMobileMenuOpen && (
         <div 
           className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
@@ -46,7 +46,7 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
         ></div>
       )}
 
-      {/* Sidebar */}
+      
       <div className={`
         h-screen w-64 bg-sidebar text-white flex flex-col z-40
         
@@ -66,7 +66,7 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             className="w-40 h-12 mr-2 cursor-pointer" 
             onClick={handleLogoClick}
           />
-          {/* <span className="text-xl font-semibold">CetiJob</span> */}
+         
         </div>
         
         <div className="mt-8 flex-1">
@@ -75,14 +75,7 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
               <FaBriefcase className="mr-3" />
               <span className="sf-ui-text">My Recruitment</span>
             </div>
-            <div className="flex items-center px-4 py-3 rounded text-white mb-2 hover:bg-[#002b5b] cursor-pointer">
-              <FaHome className="mr-3" />
-              <span className="sf-ui-text">Dashboard</span>
-            </div>
-            <div className="flex items-center px-4 py-3 rounded text-white mb-2 hover:bg-[#002b5b] cursor-pointer">
-              <FaClipboardList className="mr-3" />
-              <span className="sf-ui-text">Reports</span>
-            </div>
+            
           </div>
         </div>
         

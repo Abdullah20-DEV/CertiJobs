@@ -21,7 +21,7 @@ const Dashboard = ({ toggleMobileMenu }) => {
 
   return (
     <div className="flex flex-col min-h-screen p-4 md:p-6 bg-background">
-      {/* Mobile menu toggle button */}
+      
       <div className="lg:hidden fixed top-4 left-4 z-10">
         <button
           onClick={toggleMobileMenu}
@@ -33,7 +33,7 @@ const Dashboard = ({ toggleMobileMenu }) => {
       </div>
       <Header title="My Recruitments" />
 
-      {/* Tablet and Desktop version (with background) */}
+   
       <div className="hidden sm:block bg-white rounded-lg shadow-sm p-4 mt-4" style={{ 
         backgroundImage: `url(${HeaderBg})`,
         backgroundPosition: 'center', 
@@ -71,7 +71,6 @@ const Dashboard = ({ toggleMobileMenu }) => {
         </div>
       </div>
       
-      {/* Mobile version (no background) */}
       <div className="block sm:hidden bg-white rounded-lg shadow-sm p-4 mt-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex space-x-4 md:space-x-10 border-b overflow-x-auto pb-2 w-full md:w-auto">
@@ -110,7 +109,7 @@ const Dashboard = ({ toggleMobileMenu }) => {
         </div>
       </div>
       
-      {/* Help Center button outside of table */}
+      
       <div className="flex justify-center md:justify-end px-4 mt-8">
         <div className="flex items-center bg-white justify-between w-full max-w-xs md:w-[19rem] h-[3rem] border border-gray-200 px-3 rounded-md shadow-sm">
           <div className="flex items-center gap-2">

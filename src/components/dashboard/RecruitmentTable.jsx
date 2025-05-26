@@ -14,13 +14,13 @@ const RecruitmentTable = () => {
         recruitmentData: {
           ...recruitment,
           jobRole: recruitment.name.includes('UI/UX') ? 'UI/UX Designer' : 'Other',
-          level: 'Senior' // Default level for editing
+          level: 'Senior' 
         }
       }
     });
   };
 
-  // Sample data to match the screenshot
+
   const recruitmentData = [
     { id: 'RE-201', name: 'UI/UX Designer', candidates: 23, startDate: '20/06/2021', status: 'In Progress' },
     { id: 'RE-201', name: 'UI/UX Designer', candidates: 23, startDate: '20/06/2021', status: 'In Progress' },

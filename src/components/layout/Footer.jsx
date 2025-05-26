@@ -7,10 +7,10 @@ const Footer = () => {
       <hr className="border-gray-200 mt-7" />
 
       <footer className="p-6 pb-0">
-        {/* Social media icons */}
+      
         <div className="footer-wrapper">
           <div className="bg-[#F4F8FB]">
-            {/* Social media icons */}
+         
             <div className="flex justify-end space-x-4 p-6 pb-0 px-8">
               <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm">
                 <FaTwitter className="text-[#06BF97]" />
@@ -26,7 +26,7 @@ const Footer = () => {
               </a>
             </div>
 
-            {/* Footer content */}
+         
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 pt-4 h-auto">
               <div>
                 <h3 className="font-medium mb-3 text-[#827F7F] sf-ui-text">Services</h3>

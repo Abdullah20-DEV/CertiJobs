@@ -26,14 +26,13 @@ const RecruitmentForm = ({ toggleMobileMenu }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+
     navigate('/');
   };
 
   return (
     <div className="flex flex-col min-h-screen p-4 md:p-6 bg-background">
-      {/* Mobile menu toggle button */}
-      <div className="lg:hidden fixed top-4 left-4 z-10">
+       <div className="lg:hidden fixed top-4 left-4 z-10">
         <button
           onClick={toggleMobileMenu}
           className="bg-sidebar text-white p-3 rounded-lg shadow-lg"
@@ -52,7 +51,6 @@ const RecruitmentForm = ({ toggleMobileMenu }) => {
       }}>
       </div>
       <div className="flex h-[8rem] justify-between z-10 items-center w-full sm:hidden">
-        {/* Empty container for mobile */}
       </div>
       <div className="flex bg-white mt-[-2rem] opacity-40 h-[2rem] justify-end border border-blue-200 border-b-0 w-full"></div>
       <div className="bg-white w-full max-w-full md:max-w-[67rem] p-4 md:p-6 border border-gray-200 overflow-x-auto">
@@ -83,7 +81,7 @@ const RecruitmentForm = ({ toggleMobileMenu }) => {
                 <option value="Frontend Developer">Frontend Developer</option>
                 <option value="Backend Developer">Backend Developer</option>
                 <option value="Full Stack Developer">Full Stack Developer</option>
-                {/* <option value="Other">Job role: Other</option> */}
+            
               </select>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
